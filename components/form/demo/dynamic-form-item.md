@@ -76,6 +76,20 @@ const DynamicFieldSet = () => {
                 >
                   <Input placeholder="passenger name" style={{ width: '60%' }} />
                 </Form.Item>
+                <Form.Item
+                  {...field}
+                  validateTrigger={['onChange', 'onBlur']}
+                  rules={[
+                    {
+                      required: true,
+                      whitespace: true,
+                      message: "Please input passenger's name or delete this field.",
+                    },
+                  ]}
+                  noStyle
+                >
+                  <Input placeholder="passenger name" style={{ width: '60%' }} />
+                </Form.Item>
                 {fields.length > 1 ? (
                   <MinusCircleOutlined
                     className="dynamic-delete-button"
